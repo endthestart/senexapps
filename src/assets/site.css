@@ -207,6 +207,8 @@ ul.grid { padding: 0; list-style: none; }
 }
 .shot img { border: 1px solid var(--line); border-radius: var(--r-card); box-shadow: 0 30px 80px -24px rgb(0 0 0 / 0.7); }
 .shot figcaption { margin-top: 12px; color: var(--muted); font-size: 15px; }
+.shot.native { max-width: 952px; }
+.grid + .shot { margin-top: 48px; }
 
 kbd {
   display: inline-block;

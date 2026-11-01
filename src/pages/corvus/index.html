@@ -14,6 +14,13 @@ nav: corvus
   <p class="meta">Source preview 0.1.0-alpha.2, released as Andermic Photo Importer. macOS 13 or later, Apple silicon or Intel.</p>
 </section>
 
+<section class="section wrap">
+  <figure class="shot native">
+    <img src="/assets/img/corvus-import-952.jpg" srcset="/assets/img/corvus-import-720.jpg 720w, /assets/img/corvus-import-952.jpg 952w" sizes="(max-width: 1000px) 100vw, 952px" width="952" height="780" alt="Corvus's import window: a card selected in the sidebar and a grid of generated landscape images, each selected with a file-type badge such as JPG or NEF + JPG, above the Import All New and Import 23 Selected buttons.">
+    <figcaption>The current development build with a synthetic test card. New photos come selected.</figcaption>
+  </figure>
+</section>
+
 <section class="section wrap" aria-labelledby="workflow">
   <h2 class="head" id="workflow">From card to folders. <span class="muted">Nothing is copied until you say so.</span></h2>
   <ul class="grid" role="list">
@@ -42,6 +49,10 @@ nav: corvus
       <p class="muted">Corvus lives in the menu bar. Close the window and scans and imports keep running; <kbd>⌘</kbd><kbd>O</kbd> opens a folder instead of a card.</p>
     </li>
   </ul>
+  <figure class="shot native">
+    <img src="/assets/img/corvus-imported-952.jpg" srcset="/assets/img/corvus-imported-720.jpg 720w, /assets/img/corvus-imported-952.jpg 952w" sizes="(max-width: 1000px) 100vw, 952px" width="952" height="780" loading="lazy" decoding="async" alt="Corvus showing five new photos, two of them marked No capture date and left unselected, above an Already Imported section with Imported (cached) badges.">
+    <figcaption>Photos already imported get their own section, and photos with no capture date stay unselected until you choose one.</figcaption>
+  </figure>
 </section>
 
 <section class="section wrap" aria-labelledby="build">
@@ -53,6 +64,7 @@ git clone https://github.com/endthestart/andermic-photo-importer.git
 cd andermic-photo-importer
 ./build.sh</code></pre>
     <p class="muted">The app appears in <code>dist/</code>. The <a href="https://github.com/endthestart/andermic-photo-importer#readme">README</a> covers installing, updating and every setting.</p>
+    <p class="muted">The code on GitHub still has the old name and look, Andermic Photo Importer. The screenshots here show the current development build.</p>
   </div>
 </section>
 

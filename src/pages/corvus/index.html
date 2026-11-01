@@ -1,0 +1,69 @@
+title: SENEX Corvus · Camera-card importer for the Mac
+description: Corvus copies only the new photo and video originals from a camera card or folder into ordinary folders, verified byte for byte. No account, no cloud, no library.
+nav: corvus
+---
+<section class="app-hero wrap">
+  <img class="icon" src="/assets/img/corvus-256.png" srcset="/assets/img/corvus-512.png 2x" width="128" height="128" alt="">
+  <p class="eyebrow">SENEX Corvus · The Crow</p>
+  <h1>Only the new photos, straight from the card.</h1>
+  <p class="lead">Corvus is a small menu-bar app that copies new photo and video originals from a camera card or folder into ordinary folders, and checks every copy. No account, no cloud service, no photo library database.</p>
+  <div class="actions">
+    <a class="button" href="#build">Build from Source</a>
+    <a class="button quiet" href="/corvus/changelog/">Release Notes</a>
+  </div>
+  <p class="meta">Source preview 0.1.0-alpha.2, released as Andermic Photo Importer. macOS 13 or later, Apple silicon or Intel.</p>
+</section>
+
+<section class="section wrap" aria-labelledby="workflow">
+  <h2 class="head" id="workflow">From card to folders. <span class="muted">Nothing is copied until you say so.</span></h2>
+  <ul class="grid" role="list">
+    <li class="card">
+      <h3>Insert a card</h3>
+      <p class="muted">Corvus notices the card and scans it in the background. Scanning only previews; nothing is copied until you click Import.</p>
+    </li>
+    <li class="card">
+      <h3>New photos come selected</h3>
+      <p class="muted">Click to include or exclude, Shift-click for a range, filter by date or file type, or hide what is already imported. RAW, JPEG and sidecar files stay together.</p>
+    </li>
+    <li class="card">
+      <h3>Your folders</h3>
+      <p class="muted">Year / Month / Day by default, or your own template from <code>{YYYY}</code>, <code>{MM}</code>, <code>{DD}</code> and <code>{event}</code>. Each photo goes to its own capture day; a missing date is never guessed.</p>
+    </li>
+    <li class="card">
+      <h3>Copied, then checked</h3>
+      <p class="muted">Every copy is verified. Duplicates are confirmed by content, name clashes are handled safely, and an interrupted import says what happened and can be retried.</p>
+    </li>
+    <li class="card">
+      <h3>On to your editor</h3>
+      <p class="muted">Optionally open the new folders in your photo editor and eject the card once the import is verified.</p>
+    </li>
+    <li class="card">
+      <h3>Out of the way</h3>
+      <p class="muted">Corvus lives in the menu bar. Close the window and scans and imports keep running; <kbd>⌘</kbd><kbd>O</kbd> opens a folder instead of a card.</p>
+    </li>
+  </ul>
+</section>
+
+<section class="section wrap" aria-labelledby="build">
+  <h2 class="head" id="build">Build it yourself. <span class="muted">There is no signed download yet.</span></h2>
+  <div class="prose">
+    <p class="muted">You need macOS 13 or later and Apple's Command Line Tools; no Xcode project or paid Apple membership. The first build takes about two minutes.</p>
+    <pre><code>xcode-select --install
+git clone https://github.com/endthestart/andermic-photo-importer.git
+cd andermic-photo-importer
+./build.sh</code></pre>
+    <p class="muted">The app appears in <code>dist/</code>. The <a href="https://github.com/endthestart/andermic-photo-importer#readme">README</a> covers installing, updating and every setting.</p>
+  </div>
+</section>
+
+<section class="section wrap" aria-labelledby="details">
+  <h2 class="head" id="details">Details. <span class="muted">Private by design.</span></h2>
+  <dl class="facts">
+    <dt>Version</dt><dd>0.1.0-alpha.2 source preview, 5 October 2026</dd>
+    <dt>Runs on</dt><dd>macOS 13 or later, Apple silicon or Intel</dd>
+    <dt>Tested</dt><dd>With synthetic cards; real-camera and clean-machine checks are in progress</dd>
+    <dt>Privacy</dt><dd>Reads the cards and folders you choose and writes only to your destination: no account, no cloud, no telemetry</dd>
+    <dt>Licence</dt><dd>MIT</dd>
+    <dt>Source</dt><dd><a href="https://github.com/endthestart/andermic-photo-importer">github.com/endthestart/andermic-photo-importer</a></dd>
+  </dl>
+</section>

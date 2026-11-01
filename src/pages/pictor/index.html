@@ -1,0 +1,70 @@
+title: SENEX Pictor · Nightscape stacker for the Mac
+description: Pictor turns a folder of RAW frames from a night shoot into one finished image: the sky stacked for clean, deep stars, the ground kept sharp.
+nav: pictor
+---
+<section class="app-hero wrap">
+  <img class="icon" src="/assets/img/pictor-256.png" srcset="/assets/img/pictor-512.png 2x" width="128" height="128" alt="">
+  <p class="eyebrow">SENEX Pictor · The Painter's Easel</p>
+  <h1>A night of sky, stacked over a sharp foreground.</h1>
+  <p class="lead">Pictor turns a folder of RAW frames from a night shoot into one finished image. The sky is stacked for clean, deep stars; the ground keeps the exposure and sharpness you shot it with.</p>
+  <div class="actions">
+    <a class="button" href="#steps">See How It Works</a>
+    <span class="badge">In development</span>
+  </div>
+  <p class="meta">No public build yet. macOS first, then Linux and Windows.</p>
+</section>
+
+<section class="section wrap">
+  <figure class="shot">
+    <img src="/assets/img/pictor-compare-1440.jpg" srcset="/assets/img/pictor-compare-720.jpg 720w, /assets/img/pictor-compare-1440.jpg 1440w" sizes="(max-width: 1120px) 100vw, 1072px" width="1440" height="900" alt="Pictor's Compare screen: the six steps listed on the left, a night scene with the Milky Way over a treeline in the middle, and side-by-side crops of the darkest sky and the brightest star on the right.">
+    <figcaption>Compare, showing Pictor's built-in synthetic demo scene in natural and dark renderings.</figcaption>
+  </figure>
+</section>
+
+<section class="section wrap" aria-labelledby="steps">
+  <h2 class="head" id="steps">Six steps, one window. <span class="muted">Each screen shows why, not just what.</span></h2>
+  <ul class="grid" role="list">
+    <li class="card">
+      <h3>Import</h3>
+      <p class="muted">Drop a folder of RAW files. Pictor finds the runs, sets aside lit and overexposed frames, and checks lens, colour, memory and disk space before anything is written. Cancel at any time and resume from the last finished stage.</p>
+    </li>
+    <li class="card">
+      <h3>Frames</h3>
+      <p class="muted">See why each frame was used or left out: lit, lost, how far it drifted, and a blink against the reference.</p>
+    </li>
+    <li class="card">
+      <h3>Sky &amp; ground</h3>
+      <p class="muted">Tint the sky and its boundary over the result with <kbd>O</kbd>, then paint corrections as sky or ground with <kbd>S</kbd> and <kbd>G</kbd>.</p>
+    </li>
+    <li class="card">
+      <h3>Scene</h3>
+      <p class="muted">Build a hero composite around one frame, or a moment from a short window of the night, and open it straight away.</p>
+    </li>
+    <li class="card">
+      <h3>Compare</h3>
+      <p class="muted">Two renderings side by side. <kbd>Space</kbd> swaps them in place, <kbd>S</kbd> splits the view, and 200&nbsp;% crops take A, same or B verdicts.</p>
+    </li>
+    <li class="card">
+      <h3>Look &amp; export</h3>
+      <p class="muted">Tune the look live, then export a linear 32-bit master, a 16-bit TIFF, a JPEG or an HDR JPEG, with an HDR preview on displays that show light above paper white.</p>
+    </li>
+  </ul>
+</section>
+
+<section class="section wrap" aria-labelledby="cli">
+  <h2 class="head" id="cli">The same engine on the command line. <span class="muted">For batches and scripts.</span></h2>
+  <pre><code>pictor process ~/Nights/2026-10-12 ~/Nights/2026-10-12-out</code></pre>
+  <p class="muted prose">One command checks the folder, picks the recommended run, aligns, stacks and renders <code>final.jpg</code> and <code>final.tif</code>. Run it again into the same folder and it carries on where it stopped.</p>
+</section>
+
+<section class="section wrap" aria-labelledby="details">
+  <h2 class="head" id="details">Details. <span class="muted">Private by design.</span></h2>
+  <dl class="facts">
+    <dt>Status</dt><dd>In development; no public build yet</dd>
+    <dt>Runs on</dt><dd>macOS 12 or later, Apple silicon and Intel; Linux and Windows later</dd>
+    <dt>Reads</dt><dd>Camera RAW files</dd>
+    <dt>Writes</dt><dd>32-bit linear master, 16-bit TIFF, JPEG, HDR JPEG</dd>
+    <dt>Privacy</dt><dd>Works entirely on your Mac: no account, no cloud, no telemetry</dd>
+    <dt>Licence</dt><dd>MIT or Apache 2.0</dd>
+  </dl>
+</section>

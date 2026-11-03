@@ -41,14 +41,8 @@ Use only generated art and app screenshots of synthetic data, never personal pho
 
 ## Status
 
-As of 2026-11-02 the site is live and this repository has no remote.
+As of 2026-11-03 the site is live and this repository has no remote. The owner chose public GitHub, `endthestart/senexapps`. Until it's pushed, it exists only on the Mac Pro.
 
-Decisions open with the owner:
-
-- **Contact email:** Support and About point to GitHub for now.
-- **Pictor wording:** the home page says Pictor's source "opens with its first release". It stays while Pictor isn't release-ready.
-- **Repository location:** public on GitHub or private on Gitea.
+There is no contact email: Support and About point to GitHub.
 
 If Corvus's GitHub repository is renamed, update `andermic-photo-importer` in the Corvus, Support and About pages. The Corvus page's version details change with its first release under the new name.
-
-Before the Mac Pro move: this repository is local-only, so it must be copied to the MiniPC or pushed to a remote, which is the owner's decision.

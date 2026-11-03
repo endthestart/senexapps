@@ -7,11 +7,22 @@ nav: pictor
   <p class="eyebrow">SENEX Pictor · The Painter's Easel</p>
   <h1>A night of sky, stacked over a sharp foreground.</h1>
   <p class="lead">Pictor turns a folder of RAW frames from a night shoot into one finished image. The sky is stacked for clean, deep stars; the ground keeps the exposure and sharpness you shot it with.</p>
-  <div class="actions">
-    <a class="button" href="#steps">See How It Works</a>
-    <span class="badge">In development</span>
+  <div class="card prose">
+    <p><strong>Most people can't run this on their own photos yet.</strong></p>
+    <ul>
+      <li><strong>Cameras:</strong> only the Nikon Z6 II and D700. Import stops on any other camera.</li>
+      <li><strong>Lens data:</strong> install <a href="https://www.darktable.org/">darktable</a> or Homebrew's <code>lensfun</code>. Without one of them, Import stops.</li>
+      <li><strong>Platforms:</strong> the download is for macOS only. Linux and Windows compile but have never been run.</li>
+      <li><strong>First open:</strong> the build isn't notarized, so macOS blocks it. Try to open it, then choose Open Anyway in System Settings &gt; Privacy &amp; Security.</li>
+      <li><strong>Testing:</strong> automated tests drive all six screens, but nobody has yet taken a real folder through them by hand.</li>
+    </ul>
   </div>
-  <p class="meta">No public build yet. macOS first, then Linux and Windows.</p>
+  <div class="actions">
+    <a class="button" href="https://github.com/endthestart/senex-pictor/releases/tag/v0.1.0">Get the 0.1.0 Preview</a>
+    <a class="button quiet" href="#steps">See How It Works</a>
+    <span class="badge">Preview</span>
+  </div>
+  <p class="meta">Pre-release, 2 November 2026. macOS 12 or later, Apple silicon and Intel. <a href="https://github.com/endthestart/senex-pictor">Source on GitHub</a>.</p>
 </section>
 
 <section class="section wrap">
@@ -60,11 +71,13 @@ nav: pictor
 <section class="section wrap" aria-labelledby="details">
   <h2 class="head" id="details">Details. <span class="muted">Private by design.</span></h2>
   <dl class="facts">
-    <dt>Status</dt><dd>In development; no public build yet</dd>
-    <dt>Runs on</dt><dd>macOS 12 or later, Apple silicon and Intel; Linux and Windows later</dd>
-    <dt>Reads</dt><dd>Camera RAW files</dd>
+    <dt>Version</dt><dd>0.1.0 preview, 2 November 2026</dd>
+    <dt>Runs on</dt><dd>macOS 12 or later, Apple silicon and Intel</dd>
+    <dt>Reads</dt><dd>RAW files from the Nikon Z6 II and D700 only</dd>
+    <dt>Needs</dt><dd>Lens data from darktable or Homebrew's lensfun</dd>
     <dt>Writes</dt><dd>32-bit linear master, 16-bit TIFF, JPEG, HDR JPEG</dd>
     <dt>Privacy</dt><dd>Works entirely on your Mac: no account, no cloud, no telemetry</dd>
     <dt>Licence</dt><dd>MIT or Apache 2.0</dd>
+    <dt>Source</dt><dd><a href="https://github.com/endthestart/senex-pictor">github.com/endthestart/senex-pictor</a></dd>
   </dl>
 </section>

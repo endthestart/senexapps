@@ -41,8 +41,8 @@ Use only generated art and app screenshots of synthetic data, never personal pho
 
 ## Status
 
-As of 2026-11-03 the site is live and this repository has no remote. The owner chose public GitHub, `endthestart/senexapps`. Until it's pushed, it exists only on the Mac Pro.
+As of 2026-11-05 the site is live and this repository has no remote. The owner chose public GitHub, `endthestart/senexapps`. Until it's pushed, it exists only on the Mac Pro.
 
 There is no contact email: Support and About point to GitHub.
 
-If Corvus's GitHub repository is renamed, update `andermic-photo-importer` in the Corvus, Support and About pages. The Corvus page's version details change with its first release under the new name.
+A new app release changes its page's meta line and Version row. Corvus releases also get an entry in `src/pages/corvus/changelog/`.

@@ -39,10 +39,10 @@ npx -y wrangler@4.151.0 login --device --use-keyring --scopes account:read user:
 
 Use only generated art and app screenshots of synthetic data, never personal photos. Corvus's images are cropped from `docs/screenshots/` in its repository, and Pictor's come from its UI tests using the built-in demo scene.
 
-## Status
-
-As of 2026-11-05 the site is live and this repository has no remote. The owner chose public GitHub, `endthestart/senexapps`. Until it's pushed, it exists only on the Mac Pro.
-
-There is no contact email: Support and About point to GitHub.
+## App releases
 
 A new app release changes its page's meta line and Version row. Corvus releases also get an entry in `src/pages/corvus/changelog/`.
+
+## Status
+
+Current state, open items and pending owner steps are in [HANDOFF.md](HANDOFF.md).

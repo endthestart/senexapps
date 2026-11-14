@@ -1,0 +1,76 @@
+title: Poundlock · One endpoint for your own model servers · SENEX
+description: Poundlock connects the model servers on your own machines to your editor and to unattended coding jobs that return a patch with independent checks.
+nav: apps
+---
+<section class="app-hero wrap">
+  <img class="icon" src="/assets/img/poundlock-256.png" srcset="/assets/img/poundlock-512.png 2x" width="128" height="128" alt="">
+  <p class="eyebrow">Poundlock · The lock that lifts the boat</p>
+  <h1>Put your own model servers to work.</h1>
+  <p class="lead">Poundlock gives the model servers on your own machines one OpenAI-compatible endpoint, and runs coding jobs that come back as a patch with independently checked results.</p>
+  <div class="actions">
+    <a class="button" href="https://github.com/endthestart/poundlock/releases/latest">Get the Latest Release</a>
+    <a class="button quiet" href="https://endthestart.github.io/poundlock-site/poundlock/getting-started/">Getting Started</a>
+  </div>
+  <p class="meta">The server runs on Linux x86_64 with Docker. <a href="https://github.com/endthestart/poundlock">Source on GitHub</a>.</p>
+</section>
+
+<section class="section wrap" aria-labelledby="what">
+  <h2 class="head" id="what">One API for your models. <span class="muted">You choose what may leave your network.</span></h2>
+  <ul class="grid" role="list">
+    <li class="card">
+      <h3>One endpoint</h3>
+      <p class="muted">Connect llama.cpp, Ollama, vLLM or any OpenAI-compatible server. Each application gets its own token and permissions, and requests for a busy model wait in a queue.</p>
+    </li>
+    <li class="card">
+      <h3>Durable coding jobs</h3>
+      <p class="muted">Submit a prompt and source files. An agent works in a restricted container, and the job survives a disconnection. You get a patch and the results of your own checks.</p>
+    </li>
+    <li class="card">
+      <h3>Explicit external access</h3>
+      <p class="muted">Local inference is separate from permission to send data to an outside model. One weekly and monthly budget covers external spend across every application and job.</p>
+    </li>
+    <li class="card">
+      <h3>Wake and release</h3>
+      <p class="muted">Enrol Linux or macOS machines as nodes, wake them with Wake-on-LAN where supported, and load and unload Ollama models automatically.</p>
+    </li>
+    <li class="card">
+      <h3>Hands for any agent</h3>
+      <p class="muted"><code>poundlock mcp</code> lets an MCP client plan and review while every line of code comes from a durable job.</p>
+    </li>
+    <li class="card">
+      <h3>Yours to run</h3>
+      <p class="muted">You choose the model and its settings. Model servers, GPU drivers and model downloads stay under your control.</p>
+    </li>
+  </ul>
+</section>
+
+<section class="section wrap" aria-labelledby="family">
+  <h2 class="head" id="family">The family. <span class="muted">Test the hardware, serve the models, do the work.</span></h2>
+  <ul class="grid" role="list">
+    <li class="card">
+      <h3><a href="/poundlock/toolkit/">Poundlock Toolkit</a></h3>
+      <p class="muted">Finds which models, runtimes and settings work on a machine before you rely on it.</p>
+    </li>
+    <li class="card">
+      <h3><a href="/poundlock/dispatch/">Poundlock Dispatch</a></h3>
+      <p class="muted">A desktop app and terminal client that plan, delegate and review coding work through Poundlock.</p>
+    </li>
+    <li class="card">
+      <h3><a href="https://endthestart.github.io/poundlock-site/">Documentation</a></h3>
+      <p class="muted">Guides for all three, and how they fit together.</p>
+    </li>
+  </ul>
+</section>
+
+<section class="section wrap" aria-labelledby="details">
+  <h2 class="head" id="details">Details. <span class="muted">Private by design.</span></h2>
+  <dl class="facts">
+    <dt>Server</dt><dd>Linux x86_64 with Docker Engine 28 or later and Docker Compose</dd>
+    <dt>Nodes</dt><dd>Linux x86_64; Linux ARM64 and macOS in preview</dd>
+    <dt>Needs</dt><dd>An OpenAI-compatible model server that you already run</dd>
+    <dt>Releases</dt><dd><a href="https://github.com/endthestart/poundlock/releases">On GitHub</a>, with checksums and software bills of materials</dd>
+    <dt>Privacy</dt><dd>No SENEX account and no telemetry. Prompts and files go only to the model servers you connect</dd>
+    <dt>Licence</dt><dd>Apache 2.0</dd>
+    <dt>Source</dt><dd><a href="https://github.com/endthestart/poundlock">github.com/endthestart/poundlock</a></dd>
+  </dl>
+</section>

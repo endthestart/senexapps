@@ -1,0 +1,72 @@
+title: Poundlock Toolkit · Find what works on your hardware · SENEX
+description: Poundlock Toolkit is a command-line tool that finds which models, runtimes and settings work on hardware you control, on a local machine or over SSH.
+nav: apps
+---
+<section class="app-hero wrap">
+  <img class="icon" src="/assets/img/toolkit-256.png" srcset="/assets/img/toolkit-512.png 2x" width="128" height="128" alt="">
+  <p class="eyebrow">Poundlock Toolkit</p>
+  <h1>Find out what works on your hardware.</h1>
+  <p class="lead">Toolkit inspects a machine, shows you the setup and a bounded test plan, runs it when you say so, and compares the configurations it tested.</p>
+  <div class="actions">
+    <a class="button" href="#install">Install from PyPI</a>
+    <a class="button quiet" href="https://endthestart.github.io/poundlock-site/toolkit/">Read the Guide</a>
+  </div>
+  <p class="meta">Python 3.11 or later on Linux and macOS. <a href="https://github.com/endthestart/poundlock-toolkit">Source on GitHub</a>.</p>
+</section>
+
+<section class="section wrap" aria-labelledby="what">
+  <h2 class="head" id="what">Inspect, plan, test, compare. <span class="muted">A command that finishes, with nothing left running.</span></h2>
+  <ul class="grid" role="list">
+    <li class="card">
+      <h3>Inspect</h3>
+      <p class="muted">Reads the hardware of the local machine or an SSH target. Inspecting calls no model and no paid API.</p>
+    </li>
+    <li class="card">
+      <h3>Review the plan</h3>
+      <p class="muted">Every setup command and resource bound is shown before anything runs. Nothing executes until you say so.</p>
+    </li>
+    <li class="card">
+      <h3>Compare what was tested</h3>
+      <p class="muted">Reports compare only the configurations that actually ran, and recommend from them.</p>
+    </li>
+    <li class="card">
+      <h3>Qualification</h3>
+      <p class="muted">Export the result as a qualification file and validate it, to keep with the configuration you deploy.</p>
+    </li>
+    <li class="card">
+      <h3>Tool-call checks</h3>
+      <p class="muted">Measures how well a model's tool calls follow a nested JSON Schema, locally or over SSH.</p>
+    </li>
+    <li class="card">
+      <h3>Installs nothing for you</h3>
+      <p class="muted">No model weights, drivers or services are installed automatically. Model servers stay yours to set up.</p>
+    </li>
+  </ul>
+</section>
+
+<section class="section wrap" aria-labelledby="install">
+  <h2 class="head" id="install">Try it offline. <span class="muted">No model, Docker or credentials.</span></h2>
+  <div class="prose">
+    <pre><code>python3 -m venv .venv
+.venv/bin/python -m pip install poundlock-toolkit
+.venv/bin/poundlock-toolkit inspect</code></pre>
+    <p class="muted">Then run a synthetic report from start to finish:</p>
+    <pre><code>source .venv/bin/activate
+poundlock-toolkit example openai --output openai.json
+poundlock-toolkit demo openai.json --output demo.json
+poundlock-toolkit recommend demo.json --output report.md</code></pre>
+    <p class="muted">A synthetic report shows how Toolkit works. Only a live run says anything about your hardware or a model.</p>
+  </div>
+</section>
+
+<section class="section wrap" aria-labelledby="details">
+  <h2 class="head" id="details">Details. <span class="muted">Private by design.</span></h2>
+  <dl class="facts">
+    <dt>Runs on</dt><dd>Linux and macOS with Python 3.11 or later; Windows is untested</dd>
+    <dt>Install</dt><dd><code>pip install poundlock-toolkit</code>, from <a href="https://pypi.org/project/poundlock-toolkit/">PyPI</a></dd>
+    <dt>Targets</dt><dd>The local machine, or another over SSH</dd>
+    <dt>Privacy</dt><dd>No account and no telemetry. Reports stay in the files you write</dd>
+    <dt>Licence</dt><dd>Apache 2.0</dd>
+    <dt>Source</dt><dd><a href="https://github.com/endthestart/poundlock-toolkit">github.com/endthestart/poundlock-toolkit</a></dd>
+  </dl>
+</section>

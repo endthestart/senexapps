@@ -1,0 +1,58 @@
+title: SENEX Lyra · Music library organizer
+description: Lyra organizes a music collection: albums identified on MusicBrainz, filed in one library under one naming scheme, duplicates set aside instead of deleted. In development.
+nav: apps
+---
+<section class="app-hero wrap">
+  <img class="icon" src="/assets/img/lyra.svg" width="128" height="128" alt="">
+  <p class="eyebrow">SENEX Lyra · The Lyre</p>
+  <h1>A music collection, put in order.</h1>
+  <p class="lead">Lyra finds what you have, identifies the albums, files them in one library under one naming scheme, and sets duplicates aside without deleting anything.</p>
+  <div class="actions">
+    <a class="button quiet" href="#what">See What It Does</a>
+    <span class="badge">In development</span>
+  </div>
+  <p class="meta">Not released yet: there is no download or public source. It runs on macOS, Linux and Windows.</p>
+</section>
+
+<section class="section wrap" aria-labelledby="what">
+  <h2 class="head" id="what">From folders to a library. <span class="muted">Every change is shown first and can be undone.</span></h2>
+  <ul class="grid" role="list">
+    <li class="card">
+      <h3>Inventory</h3>
+      <p class="muted">Reads every folder you name: tags, format and quality, where each copy came from, incomplete albums and exact duplicates. Audio checks find lossy transcodes and fake 24-bit files.</p>
+    </li>
+    <li class="card">
+      <h3>Identification</h3>
+      <p class="muted">Looks each album up on MusicBrainz through <a href="https://beets.io">beets</a>. Near-certain matches are applied; the others wait for you. An album nothing matches can be filed as it is.</p>
+    </li>
+    <li class="card">
+      <h3>One library</h3>
+      <p class="muted">Identified albums are named by one scheme and, if you want, sorted into category folders such as Albums, Classical and Compilations, or by your own rules.</p>
+    </li>
+    <li class="card">
+      <h3>Duplicates and versions</h3>
+      <p class="muted">Of two copies of an album the better one stays, decided by a version policy you can read. The other moves to a quarantine folder, and its tags move to the copy that stays.</p>
+    </li>
+    <li class="card">
+      <h3>Review</h3>
+      <p class="muted">Each planned change is a card that says what moves where and why. Approve one, a page or a whole tab.</p>
+    </li>
+    <li class="card">
+      <h3>Nothing deleted</h3>
+      <p class="muted">Removed copies wait in the quarantine folder and can be restored. Every job can be undone, files and tags alike.</p>
+    </li>
+  </ul>
+</section>
+
+<section class="section wrap" aria-labelledby="details">
+  <h2 class="head" id="details">Details. <span class="muted">Private by design.</span></h2>
+  <dl class="facts">
+    <dt>Status</dt><dd>In development; no release yet</dd>
+    <dt>Runs on</dt><dd>macOS (Apple silicon and Intel), Linux and Windows, as a single program</dd>
+    <dt>Interface</dt><dd>A web interface on your own machine and a command line</dd>
+    <dt>Modes</dt><dd>A menu bar app on a desktop, or a server with sign-in next to Lidarr</dd>
+    <dt>Works with</dt><dd>beets, MusicBrainz, Lidarr and Plex</dd>
+    <dt>Privacy</dt><dd>Your music stays in your folders: no account, no telemetry. Album lookups go to MusicBrainz</dd>
+    <dt>Licence</dt><dd>MIT</dd>
+  </dl>
+</section>

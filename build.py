@@ -15,8 +15,7 @@ SRC = ROOT / "src"
 OUT = ROOT / "site"
 REQUIRED = {"title", "description"}
 NAV = (
-    ("pictor", "/pictor/", "Pictor"),
-    ("corvus", "/corvus/", "Corvus"),
+    ("apps", "/#apps", "Apps"),
     ("support", "/support/", "Support"),
     ("about", "/about/", "About"),
 )

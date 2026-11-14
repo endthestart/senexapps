@@ -11,7 +11,16 @@ python3 build.py
 python3 -m http.server 8642 --bind 127.0.0.1 --directory site
 ```
 
-`python3 tools/art.py` redraws the night sky, the favicon and the Lyra and Towpath icons in `src/assets/`. Run `build.py` afterwards.
+Files in `src/root/` are copied to the top of the site: `robots.txt` and `_headers`, which sets Cloudflare's security and cache headers. The local preview server doesn't apply `_headers`. `build.py` also writes `sitemap.xml`, listing every page but the 404.
+
+`python3 tools/art.py` redraws the night sky, the favicon and the Lyra and Towpath icons in `src/assets/`, and the share image's source, `tools/share.svg`. Run `build.py` afterwards.
+
+The share image, `src/assets/share.jpg`, is the preview card that links to the site show. To remake it after `art.py`:
+
+```sh
+qlmanage -t -s 1200 -o /tmp tools/share.svg
+sips -c 630 1200 -s format jpeg -s formatOptions 88 /tmp/share.svg.png --out src/assets/share.jpg
+```
 
 ## Deploy
 
@@ -38,6 +47,16 @@ npx -y wrangler@4.151.0 login --device --use-keyring --scopes account:read user:
 ## Images
 
 Use only generated art and app screenshots of synthetic data, never personal photos. Corvus's images are cropped from `docs/screenshots/` in its repository, and Pictor's come from its UI tests using the built-in demo scene.
+
+The Lyra, Towpath, Poundlock and Dispatch screenshots were taken on 2026-11-13 from separate instances with their own data folders and ports, never from the owner's running apps:
+
+- Lyra: a throwaway home folder and generated albums with invented names.
+- Towpath: the synthetic data that `towpath fixtures generate` writes.
+- Poundlock 0.4.4: a fresh controller, a stand-in model server listing invented models, and a job finished with a prepared patch.
+- Dispatch 0.3.2: a sample project and Dispatch's scripted test manager (`POUNDLOCK_DISPATCH_FAKE_MANAGER=1`), so no model ran.
+- Toolkit: the page quotes the `report.md` that its synthetic demo writes.
+
+Screenshots are 1440×900 with a 720-pixel copy, both JPEG at quality 82. Files under `/assets/img/` are cached for a week, so give a changed image a new file name.
 
 Icons: Pictor's and Corvus's come from their repositories. The Poundlock, Dispatch and Toolkit icons are resized from each repository's 1024-pixel brand icon. `tools/art.py` draws Lyra's from the SENEX icon template and Towpath's, which is a stand-in because Towpath has no icon of its own.
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Draws the site's night-sky band, favicon, and the Lyra and Towpath icons.
+"""Draws the site's night-sky band, favicon, share image, and the Lyra and Towpath icons.
 
 The sky and the Lyra icon follow the SENEX icon template (DESIGN-TOKENS.md in Corvus and Pictor).
 """
@@ -8,13 +8,15 @@ import math
 import random
 from pathlib import Path
 
-ASSETS = Path(__file__).resolve().parent.parent / "src" / "assets"
+TOOLS = Path(__file__).resolve().parent
+ASSETS = TOOLS.parent / "src" / "assets"
 ACCENT = "#8FB4FF"
 GROUND = "#0D1117"
 STAR = "rgb(220,228,255)"
 SPARKLE = "rgb(232,240,255)"
 
 W, H = 1600, 640
+SHARE_W, SHARE_H = 1200, 630
 TREE_BASE = 0.93 * H
 
 S, PAD = 1024, 100
@@ -87,11 +89,11 @@ def treeline(rng):
     return f'<path fill="{GROUND}" d="{"".join(trees)}{ground}"/>'
 
 
-def sky():
+def sky(size=""):
     rng_stars = random.Random(7)
     rng_trees = random.Random(3)
     return (
-        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" preserveAspectRatio="xMidYMax slice">'
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}"{size} preserveAspectRatio="xMidYMax slice">'
         "<defs>"
         '<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">'
         '<stop offset="0" stop-color="rgb(10,16,36)"/><stop offset="1" stop-color="rgb(24,38,78)"/>'
@@ -105,6 +107,22 @@ def sky():
         + bright_stars()
         + treeline(rng_trees)
         + "</svg>\n"
+    )
+
+
+def share():
+    font = "-apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif"
+    return (
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {SHARE_W} {SHARE_H}">'
+        + sky(f' width="{SHARE_W}" height="{SHARE_H}"').strip()
+        + f'<polygon points="{sparkle(102, 216, 26)}" fill="{ACCENT}"/>'
+        f'<g font-family="{font}" font-weight="600" fill="#e6eaf0">'
+        '<text x="146" y="236" font-size="54" letter-spacing="10">SENEX</text>'
+        '<text x="76" y="352" font-size="62" letter-spacing="-1.2">Apps that run on your own machines.</text>'
+        '</g>'
+        f'<text x="76" y="412" font-family="{font}" font-size="30" fill="#c9d1dc">'
+        "Photo, music, a personal archive and local AI.</text>"
+        "</svg>\n"
     )
 
 
@@ -220,6 +238,7 @@ def main():
     (ASSETS / "favicon.svg").write_text(favicon())
     (ASSETS / "img" / "lyra.svg").write_text(icon(LYRA_STARS, LYRA_FIGURE, LYRA_SEEDS))
     (ASSETS / "img" / "towpath.svg").write_text(towpath_icon())
+    (TOOLS / "share.svg").write_text(share())
 
 
 if __name__ == "__main__":

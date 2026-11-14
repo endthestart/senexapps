@@ -239,6 +239,7 @@ pre {
   background: var(--chrome);
   line-height: 1.7;
 }
+pre.report { white-space: pre-wrap; }
 :not(pre) > code { padding: 0.1em 0.35em; border-radius: var(--r-key); background: var(--raised); }
 
 .facts { display: grid; grid-template-columns: max-content 1fr; gap: 10px 32px; margin: 0; }

@@ -9,8 +9,9 @@ The marketing site for SENEX, the owner's suite of apps that run on your own mac
 ## Where things stand
 
 - **Live:** https://senexapps.com and https://www.senexapps.com, Cloudflare Pages project `senexapps`, production deployment `c785647e` from 2026-11-10, built from commit `d013475`. Every page matched the build on 2026-11-13.
-- **Pages:** Home, Pictor, Corvus, Corvus release notes, Lyra, Towpath, Poundlock, Poundlock Dispatch, Poundlock Toolkit, Support, Privacy, About and a custom 404. The five new app pages were added on 2026-11-13 and are not live until the next deploy.
-- **Apps described:** Pictor 0.1.0 preview (2 November 2026, github.com/endthestart/senex-pictor) and Corvus 0.2.0-alpha.1 source preview (5 November 2026, github.com/endthestart/senex-corvus). Both were still the latest releases on 2026-11-13. Towpath, Poundlock, Dispatch and Toolkit are described without version numbers, from their public repositories under github.com/endthestart. Lyra is listed as in development, with no download or source link.
+- **Pages:** Home, Pictor, Corvus, Corvus release notes, Lyra, Towpath, Poundlock, Poundlock Dispatch, Poundlock Toolkit, Support, Privacy, About and a custom 404. The five new app pages were added on 2026-11-13, with screenshots of synthetic data (the Toolkit page quotes a synthetic report instead).
+- **Not live yet:** the five new app pages and their screenshots, `sitemap.xml`, `robots.txt`, the share image for link previews, and the `_headers` file. They go live with the next deploy. After it, check the headers with `curl -sI https://senexapps.com/` and load each page once, because the Content-Security-Policy allows only the site's own images and stylesheet.
+- **Apps described:** Pictor 0.2.0 preview (13 November 2026, github.com/endthestart/senex-pictor) and Corvus 0.2.0-alpha.1 source preview (5 November 2026, github.com/endthestart/senex-corvus). Both were the latest releases on 2026-11-13. The live site still describes Pictor 0.1.0 until the next deploy. Towpath, Poundlock, Dispatch and Toolkit are described without version numbers, from their public repositories under github.com/endthestart. Lyra is listed as in development, with no download or source link.
 - **Repository:** public at https://github.com/endthestart/senexapps, `main` only, pushed 2026-11-13. The working copy is `~/Development/senexapps` on the Mac Pro. SSH to GitHub timed out from the Mac Pro, so the remote uses HTTPS: push with `git -c credential.helper='!gh auth git-credential' push`.
 - **Domain:** registered at Cloudflare on 2026-10-30 and expires 2027-10-30. DNS is at Cloudflare, and the apex and www are attached to the Pages project in the dashboard. The TLS certificate from Google Trust Services runs to 2027-01-29, and Cloudflare renews it.
 - **Deploy login:** a Wrangler login limited to Pages write plus account and user read, stored on the Mac Pro only. See "Wrangler login" in the README.
@@ -53,10 +54,10 @@ done
 
 - The Wrangler login exists only on the Mac Pro and may need renewing after a long break. Another machine needs its own login.
 - Wrangler is pinned at 4.151.0. With it, `pages project create` hands a new project to Workers unless `--force` is passed. Deploys to the existing project aren't affected.
-- Page copy drifts when an app releases, renames its repository or lifts a limit. The Pictor page lists the preview's limits (two cameras, lens data, macOS only, not notarized); remove each one as it's lifted. The Towpath and Poundlock pages state requirements (Docker Engine 28, Linux x86_64, Python 3.11, Node.js 22.19.0) taken from each README on 2026-11-13.
+- Page copy drifts when an app releases, renames its repository or lifts a limit. The Pictor page lists the preview's limits (two cameras tested with real photos, cameras and lenses its tables don't know, macOS only, not notarized); remove each one as it's lifted. The Towpath and Poundlock pages state requirements (Docker Engine 28, Linux x86_64, Python 3.11, Node.js 22.19.0) taken from each README on 2026-11-13.
 
 ## On resume
 
 1. Pull `main` from GitHub, or clone it on a new machine.
 2. Run the live check above.
-3. Check the latest Pictor and Corvus releases on GitHub, and update their pages if either has moved past 0.1.0 or 0.2.0-alpha.1.
+3. Check the latest Pictor and Corvus releases on GitHub, and update their pages if either has moved past 0.2.0 or 0.2.0-alpha.1.

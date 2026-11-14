@@ -2,6 +2,7 @@
 """Builds senexapps.com into site/: wraps each page in src/pages with src/layout.html.
 
 A page starts with `key: value` lines (title, description, optional nav), then a line `---`.
+Files in src/root are copied to the top of the site, and sitemap.xml lists every page but the 404.
 The build fails on a missing header field or a link to a file the site does not have.
 """
 
@@ -13,6 +14,7 @@ from string import Template
 ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src"
 OUT = ROOT / "site"
+ORIGIN = "https://senexapps.com"
 REQUIRED = {"title", "description"}
 NAV = (
     ("apps", "/#apps", "Apps"),
@@ -55,6 +57,15 @@ def nav_items(active):
     return "\n".join(items)
 
 
+def sitemap(paths):
+    urls = "".join(f"  <url><loc>{ORIGIN}{path}</loc></url>\n" for path in paths)
+    return (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        f"{urls}</urlset>\n"
+    )
+
+
 def check_links():
     broken = []
     for page in OUT.rglob("*.html"):
@@ -72,23 +83,29 @@ def main():
     layout = Template((SRC / "layout.html").read_text())
     if OUT.exists():
         shutil.rmtree(OUT)
+    shutil.copytree(SRC / "root", OUT)
     shutil.copytree(SRC / "assets", OUT / "assets")
     pages = sorted((SRC / "pages").rglob("*.html"))
+    listed = []
     for page in pages:
         meta, body = parse(page)
         relative = page.relative_to(SRC / "pages")
         target = OUT / relative
         target.parent.mkdir(parents=True, exist_ok=True)
+        if relative.name == "index.html":
+            listed.append(url_path(relative))
         target.write_text(
             layout.substitute(
                 title=meta["title"],
                 description=meta["description"],
+                origin=ORIGIN,
                 path=url_path(relative),
                 nav=nav_items(meta.get("nav")),
                 sparkle=SPARKLE,
                 content=body,
             )
         )
+    (OUT / "sitemap.xml").write_text(sitemap(sorted(listed)))
     check_links()
     print(f"Built {len(pages)} pages into {OUT.relative_to(ROOT)}/")
 

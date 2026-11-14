@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://senexapps.com/sitemap.xml

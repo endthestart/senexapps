@@ -8,10 +8,9 @@ The marketing site for SENEX, the owner's suite of apps that run on your own mac
 
 ## Where things stand
 
-- **Live:** https://senexapps.com and https://www.senexapps.com, Cloudflare Pages project `senexapps`, production deployment `c785647e` from 2026-11-10, built from commit `d013475`. Every page matched the build on 2026-11-13.
+- **Live:** https://senexapps.com and https://www.senexapps.com, Cloudflare Pages project `senexapps`, production deployment `c64a4aa9` from 2026-11-13, built from commit `c6a872e`. Every page, the sitemap and `robots.txt` matched the build that day, and the `_headers` security and cache headers were served.
 - **Pages:** Home, Pictor, Corvus, Corvus release notes, Lyra, Towpath, Poundlock, Poundlock Dispatch, Poundlock Toolkit, Support, Privacy, About and a custom 404. The five new app pages were added on 2026-11-13, with screenshots of synthetic data (the Toolkit page quotes a synthetic report instead).
-- **Not live yet:** the five new app pages and their screenshots, `sitemap.xml`, `robots.txt`, the share image for link previews, and the `_headers` file. They go live with the next deploy. After it, check the headers with `curl -sI https://senexapps.com/` and load each page once, because the Content-Security-Policy allows only the site's own images and stylesheet.
-- **Apps described:** Pictor 0.2.0 preview (13 November 2026, github.com/endthestart/senex-pictor) and Corvus 0.2.0-alpha.1 source preview (5 November 2026, github.com/endthestart/senex-corvus). Both were the latest releases on 2026-11-13. The live site still describes Pictor 0.1.0 until the next deploy. Towpath, Poundlock, Dispatch and Toolkit are described without version numbers, from their public repositories under github.com/endthestart. Lyra is listed as in development, with no download or source link.
+- **Apps described:** Pictor 0.2.0 preview (13 November 2026, github.com/endthestart/senex-pictor) and Corvus 0.2.0-alpha.1 source preview (5 November 2026, github.com/endthestart/senex-corvus). Both were the latest releases on 2026-11-13. Towpath, Poundlock, Dispatch and Toolkit are described without version numbers, from their public repositories under github.com/endthestart. Lyra is listed as in development, with no download or source link.
 - **Repository:** public at https://github.com/endthestart/senexapps, `main` only, pushed 2026-11-13. The working copy is `~/Development/senexapps` on the Mac Pro. SSH to GitHub timed out from the Mac Pro, so the remote uses HTTPS: push with `git -c credential.helper='!gh auth git-credential' push`.
 - **Domain:** registered at Cloudflare on 2026-10-30 and expires 2027-10-30. DNS is at Cloudflare, and the apex and www are attached to the Pages project in the dashboard. The TLS certificate from Google Trust Services runs to 2027-01-29, and Cloudflare renews it.
 - **Deploy login:** a Wrangler login limited to Pages write plus account and user read, stored on the Mac Pro only. See "Wrangler login" in the README.
@@ -31,13 +30,15 @@ done
 
 ## Open items, in priority order
 
-1. **Corvus PR #8** in `endthestart/senex-corvus` fixes its README clone line and changelog date. It waits on the owner's merge, and the site doesn't depend on it.
-2. **App releases.** A new Pictor or Corvus release changes its page's meta line and Version row, and a Corvus release also gets an entry on the release notes page. Then build, check and deploy.
-3. **Lyra.** When it has a public repository and a first release, give its page a download button, a Source row and a Support section.
-4. **Towpath icon.** The site draws a stand-in in `tools/art.py`. Replace it when Towpath gets an icon of its own.
+1. **Cloudflare Web Analytics is switched on for senexapps.com.** Cloudflare adds its `beacon.min.js` script to pages served to browsers on the custom domain (not to curl, and not on `pages.dev`), which contradicts the Privacy page. Since 2026-11-13 the Content-Security-Policy stops browsers loading it, and the console shows one blocked-script error per page. The owner needs to turn it off in the dashboard; the Wrangler login can't.
+2. **Corvus PR #8** in `endthestart/senex-corvus` fixes its README clone line and changelog date. It waits on the owner's merge, and the site doesn't depend on it.
+3. **App releases.** A new Pictor or Corvus release changes its page's meta line and Version row, and a Corvus release also gets an entry on the release notes page. Then build, check and deploy.
+4. **Lyra.** When it has a public repository and a first release, give its page a download button, a Source row and a Support section.
+5. **Towpath icon.** The site draws a stand-in in `tools/art.py`. Replace it when Towpath gets an icon of its own.
 
 ## Owner steps pending
 
+- Turn off Web Analytics for senexapps.com in the Cloudflare dashboard (Analytics & Logs, Web Analytics), then check that a browser's page source has no `cloudflareinsights` script.
 - Merge Corvus PR #8.
 - Check that auto-renew is on for senexapps.com in the Cloudflare dashboard before 2027-10-30. It hasn't been verified.
 

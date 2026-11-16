@@ -1,6 +1,6 @@
 # senexapps.com handoff
 
-Updated 2026-11-13. This file stands on its own; `README.md` has the commands.
+Updated 2026-11-16. This file stands on its own; `README.md` has the commands.
 
 ## What it is
 
@@ -8,7 +8,7 @@ The marketing site for SENEX, the owner's suite of apps that run on your own mac
 
 ## Where things stand
 
-- **Live:** https://senexapps.com and https://www.senexapps.com, Cloudflare Pages project `senexapps`, production deployment `c64a4aa9` from 2026-11-13, built from commit `c6a872e`. Every page, the sitemap and `robots.txt` matched the build that day, and the `_headers` security and cache headers were served.
+- **Live:** https://senexapps.com and https://www.senexapps.com, Cloudflare Pages project `senexapps`, production deployment `8556ff9b` from 2026-11-16, built from commit `ba8199b`. Every page, the sitemap and `robots.txt` matched the build that day, and the `_headers` security and cache headers were served.
 - **Pages:** Home, Pictor, Corvus, Corvus release notes, Lyra, Towpath, Poundlock, Poundlock Dispatch, Poundlock Toolkit, Support, Privacy, About and a custom 404. The five new app pages were added on 2026-11-13, with screenshots of synthetic data (the Toolkit page quotes a synthetic report instead).
 - **Apps described:** Pictor 0.2.0 preview (13 November 2026, github.com/endthestart/senex-pictor) and Corvus 0.2.0-alpha.1 source preview (5 November 2026, github.com/endthestart/senex-corvus). Both were the latest releases on 2026-11-13. Towpath, Poundlock, Dispatch and Toolkit are described without version numbers, from their public repositories under github.com/endthestart. Lyra is listed as in development, with no download or source link.
 - **Repository:** public at https://github.com/endthestart/senexapps, `main` only, pushed 2026-11-13. The working copy is `~/Development/senexapps` on the Mac Pro. SSH to GitHub timed out from the Mac Pro, so the remote uses HTTPS: push with `git -c credential.helper='!gh auth git-credential' push`.
@@ -34,7 +34,6 @@ done
 2. **Corvus PR #8** in `endthestart/senex-corvus` fixes its README clone line and changelog date. It waits on the owner's merge, and the site doesn't depend on it.
 3. **App releases.** A new Pictor or Corvus release changes its page's meta line and Version row, and a Corvus release also gets an entry on the release notes page. Then build, check and deploy.
 4. **Lyra.** When it has a public repository and a first release, give its page a download button, a Source row and a Support section.
-5. **Towpath icon.** The site draws a stand-in in `tools/art.py`. Replace it when Towpath gets an icon of its own.
 
 ## Owner steps pending
 

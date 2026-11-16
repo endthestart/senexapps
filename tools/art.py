@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Draws the site's night-sky band, favicon, share image, and the Lyra and Towpath icons.
+"""Draws the site's night-sky band, favicon, share image and the Lyra icon.
 
 The sky and the Lyra icon follow the SENEX icon template (DESIGN-TOKENS.md in Corvus and Pictor).
 """
@@ -219,25 +219,11 @@ def icon(stars, figure, seeds):
     )
 
 
-def towpath_icon():
-    return (
-        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {S} {S}">'
-        f'{TILE} fill="#1d1f27"/>'
-        '<g fill="none" stroke-linecap="round">'
-        '<path d="M250 730C470 730 520 450 780 430" stroke="#2c4a7a" stroke-width="96"/>'
-        f'<path d="M250 580C420 580 470 310 700 290" stroke="{ACCENT}" stroke-width="26" stroke-dasharray="1 62"/>'
-        "</g>"
-        f'<circle cx="760" cy="286" r="34" fill="{SPARKLE}"/>'
-        "</svg>\n"
-    )
-
-
 def main():
     (ASSETS / "img").mkdir(parents=True, exist_ok=True)
     (ASSETS / "sky.svg").write_text(sky())
     (ASSETS / "favicon.svg").write_text(favicon())
     (ASSETS / "img" / "lyra.svg").write_text(icon(LYRA_STARS, LYRA_FIGURE, LYRA_SEEDS))
-    (ASSETS / "img" / "towpath.svg").write_text(towpath_icon())
     (TOOLS / "share.svg").write_text(share())
 
 

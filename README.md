@@ -13,7 +13,7 @@ python3 -m http.server 8642 --bind 127.0.0.1 --directory site
 
 Files in `src/root/` are copied to the top of the site: `robots.txt` and `_headers`, which sets Cloudflare's security and cache headers. The local preview server doesn't apply `_headers`. `build.py` also writes `sitemap.xml`, listing every page but the 404.
 
-`python3 tools/art.py` redraws the night sky, the favicon and the Lyra and Towpath icons in `src/assets/`, and the share image's source, `tools/share.svg`. Run `build.py` afterwards.
+`python3 tools/art.py` redraws the night sky, the favicon and the Lyra icon in `src/assets/`, and the share image's source, `tools/share.svg`. Run `build.py` afterwards.
 
 The share image, `src/assets/share.jpg`, is the preview card that links to the site show. To remake it after `art.py`:
 
@@ -58,7 +58,7 @@ The Lyra, Towpath, Poundlock and Dispatch screenshots were taken on 2026-11-13 f
 
 Screenshots are 1440×900 with a 720-pixel copy, both JPEG at quality 82. Files under `/assets/img/` are cached for a week, so give a changed image a new file name.
 
-Icons: Pictor's and Corvus's come from their repositories. The Poundlock, Dispatch and Toolkit icons are resized from each repository's 1024-pixel brand icon. `tools/art.py` draws Lyra's from the SENEX icon template and Towpath's, which is a stand-in because Towpath has no icon of its own.
+Icons: Pictor's and Corvus's come from their repositories. Towpath's is `src/towpath/web/assets/icon.svg` from its repository at `v0.1.0`, unchanged. The Poundlock, Dispatch and Toolkit icons are resized from each repository's 1024-pixel brand icon. `tools/art.py` draws Lyra's from the SENEX icon template.
 
 ## App releases
 
